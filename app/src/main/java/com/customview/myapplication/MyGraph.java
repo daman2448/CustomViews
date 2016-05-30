@@ -14,7 +14,7 @@ import android.view.View;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class MyGraph extends View {
+public class MyGraph extends View implements View.OnTouchListener{
 
   ArrayList<String> weekList = new ArrayList<>(7);
   private int graphHeight;
@@ -291,5 +291,10 @@ public class MyGraph extends View {
   @Override
   protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
     super.onLayout(changed, left, top, right, bottom);
+  }
+
+  @Override
+  public boolean onTouch(View v, MotionEvent event) {
+    return false;
   }
 }
